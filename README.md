@@ -31,15 +31,8 @@ API REST em FastAPI para gerenciamento de issues com MongoDB.
    pip install fastapi uvicorn pymongo pydantic python-dotenv
    ```
 
-4. **Configure as variáveis de ambiente**
    
-   Copie o arquivo de exemplo:
-   ```bash
-   copy env.example .env  # Windows
-   # cp env.example .env  # Linux/Mac
-   ```
-   
-   Edite o arquivo `.env` com suas credenciais:
+   **Edite o arquivo `.env` com suas credenciais:**
    ```env
    MONGODB_URL= MONGODB_URL="mongodb+srv://<USER>:<PASS>@cluster.mongodb.net/...”
    MONGODB_DATABASE=
@@ -55,33 +48,3 @@ uvicorn main:app --reload
 API disponível em: `http://localhost:8000`
 
 **Documentação:** `http://localhost:8000/docs`
-
-## 📚 Endpoints
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `GET` | `/` | Lista todas as issues |
-| `POST` | `/` | Cria uma nova issue |
-| `PUT` | `/{id}` | Atualiza uma issue |
-| `DELETE` | `/{id}` | Remove uma issue |
-
-## 📝 Modelo de Dados
-
-```json
-{
-  "issue_number": 1,
-  "reason": "Descrição do problema"
-}
-```
-
-## 🔧 CORS
-
-Configurado para aceitar requisições de:
-- `http://localhost:5173`
-- `http://127.0.0.1:5173`
-
-## 🔐 Segurança
-
-- As credenciais do MongoDB estão protegidas em variáveis de ambiente
-- O arquivo `.env` está no `.gitignore` e não será commitado
-- Use o arquivo `env.example` como template para configurar suas credenciais
