@@ -8,7 +8,6 @@ MONGODB_URL = os.getenv("MONGODB_URL")
 MONGODB_DATABASE = os.getenv("MONGODB_DATABASE")
 MONGODB_COLLECTION = os.getenv("MONGODB_COLLECTION")
 
-
 # Conecta ao MongoDB
 client = MongoClient(MONGODB_URL)
 
